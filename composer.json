@@ -12,9 +12,11 @@
         "symfony/framework-bundle": "4.4.*",
         "symfony/orm-pack": "^1.0",
         "symfony/twig-pack": "^1.0",
+        "symfony/webpack-encore-bundle": "^1.7",
         "symfony/yaml": "4.4.*"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.19"
     },
     "config": {
         "preferred-install": {
