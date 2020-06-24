@@ -71,6 +71,16 @@ class Product
         return $this->price;
     }
 
+    /**
+     * Obtenir le prix en décimal: 1500 -> 15.00
+     */
+    public function getPriceFloat(): ?float
+    {
+        return $this->price === null 
+        ? null
+        : $this->price / 100;
+    }
+
     public function setPrice(int $price): self
     {
         $this->price = $price;

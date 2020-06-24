@@ -19,6 +19,21 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
+    /**
+     * Récupérer les nouveaux produits: produits créés il y a moins d'1 mois
+     * @return Product[]    // retourne un tableau d'objets Product
+     */
+    public function findNews()
+    {
+        // Création d'un QueryBuilder (constructeur de requête)
+        return $this->createQueryBuilder('p')           # "p" = alias de Product
+            ->where('p.createdAt >= :last_month')
+            ->setParameter('last_month', new \DateTime('-1 month'))
+            ->orderBy('p.createdAt', 'DESC')
+            ->getQuery()                                # obtenir la requête
+            ->getResult();                              # obtenir un tableau d'entités
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
