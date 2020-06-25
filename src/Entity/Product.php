@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Controller\ProductController;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -36,6 +37,7 @@ class Product
      * @ORM\Column(type="date")
      */
     private $createdAt;
+
 
     public function getId(): ?int
     {
@@ -99,4 +101,6 @@ class Product
 
         return $this;
     }
+
+
 }

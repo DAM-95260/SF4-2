@@ -1,0 +1,18 @@
+
+
+{% extends "_template.html.twig" %}
+
+{# on ecrase le bloc title #}
+{% block title %}
+    Produits
+{% endblock %}
+
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">Liste des produits: {{ product_list|length }}</h1>
+        {% include 'includes/product_list.html.twig' with {products: product_list} %}
+    </div>
+
+
+{% endblock %}

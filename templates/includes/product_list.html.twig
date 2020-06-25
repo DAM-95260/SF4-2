@@ -1,0 +1,35 @@
+<div class="columns is-multiline">
+            {% for product in products %}
+                <div class="column is-one-third">
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128">
+                                    <img src="https://loremflickr.com/256/256/clothes/all?lock={{ product.id }}" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <a href="{{ path('product_show', {id: product.id}) }}" class="has-text-primary">
+                                            <strong>{{ product.name }}</strong>
+                                        </a>
+                                        <small>{{ product.createdAt|date('d/m/Y') }}</small>
+                                        <br>
+                                        {{ product.description|slice(0, 50) }}
+                                    </p>
+                                    <div class="tags has-addons">
+                                        <span class="tag">{{ product.priceFloat|number_format(2, '.', ' ') }}</span>
+                                        <span class="tag is-primary">
+                                            <span class="icon">
+                                                <i class="fas fa-euro-sign"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            {% endfor %}
+</div>

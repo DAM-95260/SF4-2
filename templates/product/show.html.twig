@@ -1,0 +1,42 @@
+{% extends "_template.html.twig" %}
+
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="columns">
+            <div class="column is-two-fifth">
+                <figure class="image is-1by1">
+                    <img src="https://loremflickr.com/1024/1024/clothes/all?lock={{ product.id }}">
+                </figure>
+            </div>
+
+            <div class="column">
+                <h1 class="title has-text-primary">
+                    {{ product.name }}
+                </h1>
+
+                <p class="content">
+                    {{ product.description }}
+                </p>
+
+                <div class="tags has-addons are-large">
+                <span class="tag">
+                    {{ product.priceFloat|number_format(2, '.', ' ') }}
+                </span>
+                    <span class="tag is-primary">
+                    <span class="icon"><i class="fas fa-euro-sign"></i></span>
+                </span>
+                </div>
+
+                <hr>
+                <h6 class="is-size-7">
+                    <span class="icon has-text-info"><i class="fas fa-info-circle"></i></span>
+                    <span>Produit ajouté le {{ product.createdAt|date('d/m/Y') }}</span>
+                </h6>
+            </div>
+        </div>
+    </section>
+{% endblock %}
