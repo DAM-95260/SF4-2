@@ -13,7 +13,7 @@ class HomeController extends AbstractController
      */
     public function index(ProductRepository $repository)
     {
-        
+
         $result = $repository->findNews();
         return $this->render('home/index.html.twig', [
             'new_products' => $repository->findAll()
