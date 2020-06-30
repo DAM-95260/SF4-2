@@ -1,0 +1,30 @@
+{% extends "_template.html.twig" %}
+
+{% block title %}
+Inscription
+{% endblock %}
+
+
+
+{% block content %}
+    < class="section">
+    <h1 class="title">Inscription</h1>
+
+    {{ form_start(registrationForm) }}
+
+    {{ form_row(registrationForm, {
+        label: 'Adresse email:'
+    }) }}
+
+    {{ form_row(registrationForm.plainPassword.first, {
+        label: 'Confirmer le mot de passe:'
+    }) }}
+
+    <button type="submit" class="button is-primary is-fullwidth">
+        Iscription
+    </button>
+
+    {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}
+
