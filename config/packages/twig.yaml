@@ -3,3 +3,6 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     exception_controller: null
+
+    # Enregistrement du thème de formulaire pour bulma
+    form_themes: ['includes/_form_theme_bulma.html.twig']
