@@ -14,7 +14,7 @@
             {# si l'utilisateur est déjà connecté #}
             {% if app.user %}
                 <div class="notification is-info">
-                    Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('logout') }}">Déconnexion</a>
                 </div>
             {% endif %}
 
