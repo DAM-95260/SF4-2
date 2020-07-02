@@ -4,10 +4,10 @@ namespace App\Entity;
 
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Controller\ProductController;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Product
 {
@@ -38,6 +38,16 @@ class Product
      */
     private $createdAt;
 
+    /**
+     * Méthode exécutée avant l'insertion en base
+     * @ORM\PrePersist()
+     */
+    public function prePersist()
+    {
+        if ($this->createdAt === null) {
+            $this->createdAt = new \DateTime();
+        }
+    }
 
     public function getId(): ?int
     {
@@ -78,9 +88,9 @@ class Product
      */
     public function getPriceFloat(): ?float
     {
-        return $this->price === null 
-        ? null
-        : $this->price / 100;
+        return $this->price === null
+            ? null
+            : $this->price / 100;
     }
 
     public function setPrice(int $price): self
@@ -101,6 +111,4 @@ class Product
 
         return $this;
     }
-
-
 }
