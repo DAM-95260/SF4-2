@@ -1,0 +1,14 @@
+{% extends "_admin_template.html.twig" %}
+
+{% block title %}
+    Modifier la catégorie {{ product.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">Modifier la categorie {{ category.name }}</h1>
+        <h2 class="subtitle">Créé le {{ category.createdAt|date('d/m/Y') }}</h2>
+        {% include 'includes/flashes.html.twig' %}
+        {% include 'admin_category/_category_form.html.twig' %}
+    </div>
+{% endblock %}

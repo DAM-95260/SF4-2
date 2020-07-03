@@ -14,6 +14,12 @@
                                         <a href="{{ path('product_show', {id: product.id}) }}" class="has-text-primary">
                                             <strong>{{ product.name }}</strong>
                                         </a>
+                                        <br>
+                                        <div class="is-size-5-desktop">
+                                        <label>Catégorie: </label>
+                                        <small>{{ product.category.name }}</small>
+                                        </div>
+                                        <br>
                                         <small>{{ product.createdAt|date('d/m/Y') }}</small>
                                         <br>
                                         {{ product.description|slice(0, 50) }}

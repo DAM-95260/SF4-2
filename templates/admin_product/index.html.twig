@@ -20,6 +20,7 @@
         <tr>
             <th>#</th>
             <th>Nom</th>
+            <th>Catégorie</th>
             <th>Description</th>
             <th>Prix</th>
             <th>Création</th>
@@ -42,6 +43,7 @@
                             {{ product.name }}
                         </a>
                     </td>
+                    <td>{{ product.category.name }}</td>
                     <td>{{ product.description|slice(0, 25) }}</td>
                     <td class="has-text-right">
                         {{ product.priceFloat|number_format(2, '.', ' ') }} €
